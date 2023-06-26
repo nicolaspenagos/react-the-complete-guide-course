@@ -1,0 +1,8 @@
+.expense-list{
+    margin: 30px;
+    padding: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: rgba(0, 0, 0, 0.257);
+    border-radius: 10px;
+}
