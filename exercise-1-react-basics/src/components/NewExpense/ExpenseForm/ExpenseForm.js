@@ -6,6 +6,7 @@ function ExpenseForm(props) {
   const [enteredAmount, setEnteredAmount] = useState("");
   const [enteredDate, setEnteredDate] = useState("");
 
+
   const handlerMapper = {
     title: (value) => {
       setEnteredTitle(value);
@@ -71,6 +72,9 @@ function ExpenseForm(props) {
         </div>
         <div className="new-expense__actions">
           <button type="submit">Add expense</button>
+        </div>
+        <div className="new-expense__actions">
+          <button onClick={()=>props.onCancel(false)}>Cancel</button>
         </div>
       </div>
     </form>

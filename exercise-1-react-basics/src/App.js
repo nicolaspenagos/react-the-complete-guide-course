@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import ExpensesList from "./components/ExpensesList/ExpensesList";
-import NewExpense from './components/NewExpense/NewExpense';
+import ExpensesList from "./components/Expense/ExpensesList/ExpensesList";
+import NewExpense from './components/NewExpense/NewExpense/NewExpense';
 
 // Alternative way to write a function
 const App = () => {
@@ -31,7 +31,7 @@ const App = () => {
 
   const addExpenseHandler = expense => {
   
-    setExpenses([...expenses, expense]);
+    setExpenses((prevState)=>[...prevState, expense]);
   }
 
   // The under the hood / behind the scenes react stuff

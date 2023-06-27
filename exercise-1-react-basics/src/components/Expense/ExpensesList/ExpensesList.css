@@ -1,0 +1,25 @@
+.expenses{
+    width: 50rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: rgb(36, 36, 36);
+}
+
+.expenses-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .expenses-list__fallback {
+    color: white;
+    text-align: center;
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
