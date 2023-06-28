@@ -3,6 +3,7 @@ import ExpenseItem from "../ExpenseItem/ExpenseItem";
 import Card from "../../Card/Card";
 import './ExpensesList.css';
 import ExpensesFilter from '../ExpensesFilter/ExpensesFilter';
+import ExpensesChart from '../ExpensesChart/ExpensesChart';
 
 function ExpensesList({ expensesList }) {
 
@@ -17,6 +18,7 @@ function ExpensesList({ expensesList }) {
   return (
     <Card className="expenses">
       <ExpensesFilter onSelectedYearChanged={hanldeOnSelectedYearChanged} selectedYear={selectedYear}/>
+      <ExpensesChart expenses={filteredList}/>
       <ul className="expenses-list">
         {filteredList.length === 0 ? <h2 className='expenses-list__fallback'>No Espenses found.</h2>:filteredList.map(expense => <ExpenseItem expense={expense} key={expense.id}/>)}
       </ul>
