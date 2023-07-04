@@ -1,6 +1,8 @@
 import React from "react";
 import styles from "./Result.module.css";
 
+const usdFormatter = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' });
+
 function Result({ completeData }) {
   const calculateData = (userInput) => {
     // Should be triggered when form is submitted
@@ -34,7 +36,6 @@ function Result({ completeData }) {
   };
 
   const yearlyData = calculateData(completeData);
-  const usdFormatter = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' });
 
   return (
     <table className={styles["result"]}>

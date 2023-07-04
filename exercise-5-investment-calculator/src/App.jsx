@@ -16,8 +16,8 @@ function App() {
     <div>
       <Header/>
       <Form calculateHandler={calculateHandler}/>
-      {completeData === null && <h3>No data is available!</h3>}
-      {completeData !== null && <Result completeData={completeData}/>}
+      {!completeData && <h3>No data is available!</h3>}
+      {completeData  && <Result completeData={completeData}/>}
      
     </div>
   );
