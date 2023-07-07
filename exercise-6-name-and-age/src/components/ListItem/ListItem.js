@@ -3,10 +3,10 @@ import styles from "./ListItem.module.css";
 
 function ListItem({ user }) {
   return (
-    <div className={styles.item}>
+    <li className={styles.item}>
       <div className={styles.username}>{user.username}</div>
       <div>{user.age} years</div>
-    </div>
+    </li>
   );
 }
 

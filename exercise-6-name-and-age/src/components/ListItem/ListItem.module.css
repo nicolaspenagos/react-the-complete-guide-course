@@ -1,14 +1,17 @@
-.item{
-    display: flex;
-    width: 40%;
-    background-color:var(--button-color);
-    color: #ABABAB;
-    justify-content: space-between;
-    padding: 1rem;
-    border-radius: 1rem;
-    margin-top: 10px;
+.item {
+  display: flex;
+
+  background-color: var(--button-color);
+  color: #ababab;
+  justify-content: space-between;
+  padding: 1rem;
+  border-radius: 1rem;
+
+  list-style-type: none;
+  margin: 0;
+  margin-top: 10px;
 }
 
-.username{
-    font-weight: bold;
+.username {
+  font-weight: bold;
 }

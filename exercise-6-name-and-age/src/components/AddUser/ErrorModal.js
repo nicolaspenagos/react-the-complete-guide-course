@@ -1,16 +1,10 @@
 import React from "react";
 import styles from "./ErrorModal.module.css";
+import ReactDOM from "react-dom";
 
-
-function ErrorModal({ onCloseModal }) {
+const Modal = ({ onCloseModal }) => {
   return (
-    <div
-      className={styles.backdrop}
-      onClick={(event) => {
-        event.stopPropagation();
-        onCloseModal();
-      }}
-    >
+    <>
       <div className={styles.modal}>
         <header>
           <h2>Invalid Input</h2>
@@ -24,7 +18,21 @@ function ErrorModal({ onCloseModal }) {
           Okay
         </button>
       </div>
-    </div>
+      <div
+        className={styles.backdrop}
+        onClick={(event) => {
+          event.stopPropagation();
+          onCloseModal();
+        }}
+      ></div>
+    </>
+  );
+};
+
+function ErrorModal({ onCloseModal }) {
+  return ReactDOM.createPortal(
+    <Modal onCloseModal={onCloseModal} />,
+    document.getElementById("overlay-root")
   );
 }
 
