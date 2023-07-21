@@ -1,18 +1,13 @@
-import { json, useLoaderData, defer, Await } from "react-router-dom";
+import { Suspense } from 'react';
+import { useLoaderData, json, defer, Await } from 'react-router-dom';
 
-import EventsList from "../components/EventsList";
-import { Suspense } from "react";
-
+import EventsList from '../components/EventsList';
 
 function EventsPage() {
   const { events } = useLoaderData();
 
-  //if (data.isError) return <p>{data.message}</p>;
-
-  // const events = data.events;
-
   return (
-    <Suspense fallback={<p style={{textAlign:'center'}}>Loading...</p>}>
+    <Suspense fallback={<p style={{ textAlign: 'center' }}>Loading...</p>}>
       <Await resolve={events}>
         {(loadedEvents) => <EventsList events={loadedEvents} />}
       </Await>
@@ -42,8 +37,8 @@ async function loadEvents() {
   }
 }
 
-export const loader = () => {
+export function loader() {
   return defer({
     events: loadEvents(),
   });
-};
+}
